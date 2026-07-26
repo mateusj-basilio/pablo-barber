@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0a0a0a;
+  --color-secondary: #171717;
+  --color-accent: #ffffff; /* Monocromático / Minimalista */
+  --color-accent-hover: #d4d4d4;
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #a3a3a3;
+  --color-border: #262626;
+
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--color-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer components {
+  /* Padronização visual para os botões - minimalista e premium */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-accent text-primary font-semibold text-sm uppercase tracking-wider rounded-md transition-all duration-300;
+  }
+  .btn-primary:hover {
+    @apply bg-accent-hover;
+  }
+  
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-4 bg-transparent border border-border text-white font-semibold text-sm uppercase tracking-wider rounded-md transition-all duration-300;
+  }
+  .btn-outline:hover {
+    @apply border-accent text-accent;
+  }
+
+  /* Classes base para as animações de Reveal */
+  .gsap-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .gsap-reveal.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

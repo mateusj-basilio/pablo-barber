@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import pabloImg from '../assets/images/pablo.jpg';
+---
+
+<section id="filosofia" class="py-24 bg-secondary relative overflow-hidden border-t border-border/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      
+      <!-- Text Content -->
+      <div class="gsap-reveal order-2 lg:order-1">
+        <p class="text-accent uppercase tracking-widest font-semibold text-sm mb-2">A Assinatura</p>
+        <h2 class="font-heading text-4xl md:text-5xl font-bold mb-8 text-white leading-tight">
+          A tesoura é apenas <br />uma <span class="text-accent italic">extensão da mente.</span>
+        </h2>
+        
+        <div class="space-y-6 text-text-secondary text-lg leading-relaxed font-light">
+          <p>
+            Um corte de cabelo não deve ser feito no modo automático. A verdadeira estética masculina exige um olhar clínico e uma técnica afiada.
+          </p>
+          <p>
+            Antes mesmo da primeira tesourada, eu já visualizei a estrutura perfeita para o seu formato de rosto. É a união matemática da geometria craniana com o feeling artístico do visagismo que separa um corte comum de uma verdadeira assinatura de estilo.
+          </p>
+          <p>
+            No meu espaço, localizado no Alto Vale, você não compra um serviço de barbearia; você investe na sua imagem pessoal. Meu compromisso é entregar não apenas precisão, mas confiança absoluta para o homem moderno.
+          </p>
+        </div>
+        
+        <div class="mt-12 flex gap-4">
+          <div class="w-16 h-[1px] bg-accent self-center"></div>
+          <p class="text-white font-heading font-bold text-xl uppercase tracking-widest">Pablo Lems</p>
+        </div>
+      </div>
+
+      <!-- Image Content -->
+      <div class="relative gsap-reveal order-1 lg:order-2">
+        <div class="absolute -inset-4 bg-primary border border-border/50 rounded-sm transform -rotate-2 -z-10"></div>
+        <div class="absolute -inset-2 bg-accent/10 border border-accent/20 rounded-sm transform rotate-1 -z-10"></div>
+        
+        <!-- O container tem um ratio específico para garantir que a foto da tesoura tenha um bom recorte e altura -->
+        <div class="relative aspect-[3/4] w-full rounded-sm overflow-hidden shadow-2xl">
+          <Image 
+            src={pabloImg} 
+            alt="Pablo Lems com tesoura"
+            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 transform hover:scale-105"
+          />
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>

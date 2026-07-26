@@ -1,0 +1,49 @@
+---
+import { Image } from 'astro:assets';
+import aboutImg from '../assets/images/about/sobre-1.png';
+---
+
+<section id="sobre" class="py-24 bg-secondary">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <div class="relative gsap-reveal">
+        <div class="absolute -inset-4 bg-accent/20 border border-accent/30 rounded-sm transform rotate-3 -z-10"></div>
+        <Image src={aboutImg} alt="Pablo Lems cortando cabelo"
+          class="rounded-sm shadow-2xl object-cover w-full h-[600px] grayscale hover:grayscale-0 transition-all duration-700" />
+      </div>
+
+      <div class="gsap-reveal">
+        <p class="text-accent uppercase tracking-widest font-semibold text-sm mb-2">Sobre o Barbeiro</p>
+        <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6 text-white">
+          Da Argentina <br />para o <span class="text-accent italic">Brasil</span>
+        </h2>
+
+        <div class="space-y-6 text-text-secondary text-lg leading-relaxed font-light">
+          <p>
+            Com raízes na Argentina, Pablo Lems trouxe para o Brasil a verdadeira essência do corte masculino e da geometria craniana. Radicado em Imbuia - SC há mais de 2 anos, ele transformou sua técnica em referência para clientes de Ituporanga, Rio do Sul e região.
+          </p>
+          <p>
+            A filosofia é direta: um cabelo ou barba bem desenhados não são apenas estética, são ferramentas de confiança. Cada serviço é executado com precisão milimétrica, utilizando as melhores técnicas internacionais de fading e tesoura.
+          </p>
+          <p>
+            Construindo uma base de clientes fiéis através da excelência técnica, o atendimento de Pablo Lems (realizado na DJ Barbearia) é mais que um simples corte de cabelo — é uma verdadeira consultoria de imagem para o homem de alto padrão.
+          </p>
+        </div>
+
+        <div class="mt-10 flex items-center gap-6 border-t border-border pt-8">
+          <div>
+            <p class="text-3xl font-heading text-accent font-bold">2+</p>
+            <p class="text-sm text-text-secondary uppercase tracking-wider mt-1">Anos em Imbuia</p>
+          </div>
+          <div class="w-px h-12 bg-border"></div>
+          <div>
+            <p class="text-3xl font-heading text-accent font-bold">1000+</p>
+            <p class="text-sm text-text-secondary uppercase tracking-wider mt-1">Clientes Satisfeitos</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

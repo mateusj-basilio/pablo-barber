@@ -1,0 +1,128 @@
+---
+import { Image } from 'astro:assets';
+import train1 from '../assets/images/treinamentos/treinamento-curso-1.jpg';
+import train2 from '../assets/images/treinamentos/treinamento-curso-2.jpg';
+import train3 from '../assets/images/treinamentos/treinamento-curso-3.jpg';
+---
+
+<section class="py-24 bg-primary relative overflow-hidden border-t border-border/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center mb-16 gsap-reveal">
+      <p class="text-accent uppercase tracking-widest font-semibold text-sm mb-2">Excelência Técnica</p>
+      <h2 class="font-heading text-4xl md:text-5xl font-bold mb-6 text-white">
+        A Essência de um <span class="text-accent italic">Barbeiro de Elite</span>
+      </h2>
+      <p class="text-text-secondary text-lg max-w-3xl mx-auto font-light">
+        O alto padrão exige domínio absoluto. Minhas técnicas exclusivas de visagismo e precisão garantem não apenas um corte, mas a construção da sua imagem pessoal.
+      </p>
+    </div>
+
+    <!-- 6 Cards de Diferenciais Técnicos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+      
+      <!-- Card 1 -->
+      <div class="bg-secondary/40 border border-border/50 p-8 hover:border-accent/50 transition-all duration-300 transform hover:-translate-y-2 gsap-reveal">
+        <div class="text-accent mb-6">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+        </div>
+        <h3 class="text-xl font-heading font-bold text-white mb-2">Visagismo e Geometria Craniana</h3>
+        <p class="text-text-secondary font-light text-sm leading-relaxed">
+          Estudo profundo das linhas do rosto e estrutura craniana. O corte é esculpido para valorizar seus pontos fortes e harmonizar sua expressão facial.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-secondary/40 border border-border/50 p-8 hover:border-accent/50 transition-all duration-300 transform hover:-translate-y-2 gsap-reveal" style="transition-delay: 100ms;">
+        <div class="text-accent mb-6">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+        </div>
+        <h3 class="text-xl font-heading font-bold text-white mb-2">Fades Milimétricos (Degradê)</h3>
+        <p class="text-text-secondary font-light text-sm leading-relaxed">
+          Transições limpas e polimento cirúrgico. Cada milímetro é trabalhado com máquinas e lâminas para entregar um sombreado impecável e sem marcas.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-secondary/40 border border-border/50 p-8 hover:border-accent/50 transition-all duration-300 transform hover:-translate-y-2 gsap-reveal" style="transition-delay: 200ms;">
+        <div class="text-accent mb-6">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path></svg>
+        </div>
+        <h3 class="text-xl font-heading font-bold text-white mb-2">Texturização e Encaixe</h3>
+        <p class="text-text-secondary font-light text-sm leading-relaxed">
+          Uso avançado de tesouras para criar movimento, leveza e direção aos fios. Garanto um cabelo que se arruma com extrema facilidade no seu dia a dia.
+        </p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-secondary/40 border border-border/50 p-8 hover:border-accent/50 transition-all duration-300 transform hover:-translate-y-2 gsap-reveal">
+        <div class="text-accent mb-6">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+        </div>
+        <h3 class="text-xl font-heading font-bold text-white mb-2">Barboterapia Clássica</h3>
+        <p class="text-text-secondary font-light text-sm leading-relaxed">
+          O ritual completo: toalhas quentes, ozônio, óleos essenciais e massagem facial. Um cuidado extremo que hidrata a pele e alinha os fios da barba.
+        </p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="bg-secondary/40 border border-border/50 p-8 hover:border-accent/50 transition-all duration-300 transform hover:-translate-y-2 gsap-reveal" style="transition-delay: 100ms;">
+        <div class="text-accent mb-6">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+        </div>
+        <h3 class="text-xl font-heading font-bold text-white mb-2">Colorimetria Platinada</h3>
+        <p class="text-text-secondary font-light text-sm leading-relaxed">
+          Controle químico preciso para luzes, reflexos e platinados. Garanto a cor perfeita preservando totalmente a saúde do fio e do couro cabeludo.
+        </p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="bg-secondary/40 border border-border/50 p-8 hover:border-accent/50 transition-all duration-300 transform hover:-translate-y-2 gsap-reveal" style="transition-delay: 200ms;">
+        <div class="text-accent mb-6">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+        </div>
+        <h3 class="text-xl font-heading font-bold text-white mb-2">Atendimento Consultivo</h3>
+        <p class="text-text-secondary font-light text-sm leading-relaxed">
+          Nenhum corte é padrão. Conduzo uma breve consultoria para entender sua rotina, estilo de vida e o que você deseja transmitir com a sua estética.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Seção de Imagens Separadas -->
+    <div class="pt-16 mt-8 border-t border-border/30">
+      <div class="text-center mb-12 gsap-reveal">
+        <h3 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
+          Treinamentos & <span class="text-accent italic">Workshops</span>
+        </h3>
+        <p class="text-text-secondary text-lg max-w-2xl mx-auto font-light">
+          A busca constante por referências, técnicas avançadas e tendências do mercado nacional e internacional.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="group overflow-hidden rounded-sm relative aspect-[4/5] gsap-reveal">
+          <Image 
+            src={train1} 
+            alt="Técnicas de Tesoura e Visagismo" 
+            class="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0" 
+          />
+        </div>
+        <div class="group overflow-hidden rounded-sm relative aspect-[4/5] gsap-reveal" style="transition-delay: 100ms;">
+          <Image 
+            src={train2} 
+            alt="Fades e Transições" 
+            class="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0" 
+          />
+        </div>
+        <div class="group overflow-hidden rounded-sm relative aspect-[4/5] gsap-reveal" style="transition-delay: 200ms;">
+          <Image 
+            src={train3} 
+            alt="Barboterapia Clássica" 
+            class="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0" 
+          />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

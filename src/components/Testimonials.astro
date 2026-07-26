@@ -1,0 +1,80 @@
+---
+// src/components/Testimonials.astro
+// Placeholder for testimonials. Using a simple grid instead of a complex JS carousel for better performance,
+// but styled to look like a premium slider track.
+---
+
+<section class="py-24 bg-secondary border-t border-border/30">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 gsap-reveal">
+      <h2 class="font-heading text-3xl md:text-5xl font-bold mb-4 text-white">
+        A Palavra de Quem <span class="text-accent italic">Confia</span>
+      </h2>
+      <p class="text-text-secondary text-lg max-w-2xl mx-auto font-light">
+        A melhor propaganda é um cliente satisfeito.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Testimonial 1 -->
+      <div class="bg-primary/50 p-8 rounded-none border border-border/50 gsap-reveal relative">
+        <div class="absolute -top-4 -left-2 text-6xl text-accent/20 font-heading">"</div>
+        <div class="flex text-accent mb-4">
+          {'★★★★★'.split('').map(star => <span>{star}</span>)}
+        </div>
+        <p class="text-text-secondary italic mb-6 relative z-10">
+          O Pablo é um profissional fora da curva. O cuidado com os detalhes no corte e na barba fazem toda a diferença. Melhor barbearia da região de Imbuia!
+        </p>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-bold text-accent border border-border">
+            LM
+          </div>
+          <div>
+            <p class="text-white font-bold font-heading">Lucas Mendes</p>
+            <p class="text-xs text-text-secondary uppercase tracking-wider">Cliente Fiel</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="bg-primary/50 p-8 rounded-none border border-border/50 gsap-reveal relative" style="transition-delay: 100ms;">
+        <div class="absolute -top-4 -left-2 text-6xl text-accent/20 font-heading">"</div>
+        <div class="flex text-accent mb-4">
+          {'★★★★★'.split('').map(star => <span>{star}</span>)}
+        </div>
+        <p class="text-text-secondary italic mb-6 relative z-10">
+          Atendimento excepcional. A barboterapia é uma experiência relaxante incrível. Recomendo de olhos fechados para quem busca qualidade.
+        </p>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-bold text-accent border border-border">
+            RS
+          </div>
+          <div>
+            <p class="text-white font-bold font-heading">Rafael Silva</p>
+            <p class="text-xs text-text-secondary uppercase tracking-wider">Cliente Fiel</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="bg-primary/50 p-8 rounded-none border border-border/50 gsap-reveal relative" style="transition-delay: 200ms;">
+        <div class="absolute -top-4 -left-2 text-6xl text-accent/20 font-heading">"</div>
+        <div class="flex text-accent mb-4">
+          {'★★★★★'.split('').map(star => <span>{star}</span>)}
+        </div>
+        <p class="text-text-secondary italic mb-6 relative z-10">
+          Finalmente encontrei um barbeiro que entende o que eu quero. O ambiente é super agradável e a técnica do Pablo é impecável.
+        </p>
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center font-bold text-accent border border-border">
+            FA
+          </div>
+          <div>
+            <p class="text-white font-bold font-heading">Fernando Almeida</p>
+            <p class="text-xs text-text-secondary uppercase tracking-wider">Cliente Fiel</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

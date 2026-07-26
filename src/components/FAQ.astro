@@ -1,0 +1,156 @@
+---
+// src/components/FAQ.astro
+---
+
+<section id="faq" class="py-24 bg-primary border-t border-border/30">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center mb-16 gsap-reveal">
+      <p class="text-accent uppercase tracking-widest font-semibold text-sm mb-2">Dúvidas Frequentes</p>
+      <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mb-6">
+        Tudo o que você precisa <br /><span class="text-accent italic">Saber</span>
+      </h2>
+    </div>
+
+    <!-- FAQ Accordion Container -->
+    <div class="space-y-4 gsap-reveal" x-data="{ active: null }">
+      
+      <!-- FAQ 1 -->
+      <div class="bg-secondary rounded-sm overflow-hidden border border-border/50">
+        <button @click="active !== 1 ? active = 1 : active = null" class="w-full text-left px-6 py-5 focus:outline-none flex justify-between items-center group">
+          <h3 class="text-white font-medium text-lg group-hover:text-accent transition-colors duration-300">Quais cidades o Barbeiro Pablo Lems atende?</h3>
+          <span class="text-accent transform transition-transform duration-300" :class="active === 1 ? 'rotate-180' : 'rotate-0'">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </span>
+        </button>
+        <div x-show="active === 1" x-collapse x-cloak class="px-6 pb-5 text-text-secondary font-light">
+          O barbeiro Pablo Lems realiza seus atendimentos na DJ Barbearia, localizada no centro de Imbuia - SC. Pela exclusividade e nível técnico (Visagismo e Fades), ele recebe diariamente clientes de toda a região do Alto Vale, incluindo Ituporanga, Rio do Sul, Vidal Ramos, Aurora, Petrolândia, Presidente Nereu, Botuverá e Leoberto Leal.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="bg-secondary rounded-sm overflow-hidden border border-border/50">
+        <button @click="active !== 2 ? active = 2 : active = null" class="w-full text-left px-6 py-5 focus:outline-none flex justify-between items-center group">
+          <h3 class="text-white font-medium text-lg group-hover:text-accent transition-colors duration-300">Qual a especialidade do Pablo Lems?</h3>
+          <span class="text-accent transform transition-transform duration-300" :class="active === 2 ? 'rotate-180' : 'rotate-0'">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </span>
+        </button>
+        <div x-show="active === 2" x-collapse x-cloak class="px-6 pb-5 text-text-secondary font-light">
+          A grande especialidade de Pablo Lems é a união da Barbearia Clássica com o Visagismo Masculino. Ele domina a Geometria Craniana para criar Fades Milimétricos (Degradê) e Texturizações que se encaixam perfeitamente no formato do seu rosto. Além disso, é um mestre na Barboterapia tradicional.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="bg-secondary rounded-sm overflow-hidden border border-border/50">
+        <button @click="active !== 3 ? active = 3 : active = null" class="w-full text-left px-6 py-5 focus:outline-none flex justify-between items-center group">
+          <h3 class="text-white font-medium text-lg group-hover:text-accent transition-colors duration-300">Por que escolher o Pablo em vez de uma barbearia comum?</h3>
+          <span class="text-accent transform transition-transform duration-300" :class="active === 3 ? 'rotate-180' : 'rotate-0'">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </span>
+        </button>
+        <div x-show="active === 3" x-collapse x-cloak class="px-6 pb-5 text-text-secondary font-light">
+          Barbearias comuns funcionam como "linhas de produção", focando apenas em volume. Com o Pablo Lems, você tem uma verdadeira consultoria de imagem. O tempo de atendimento é maior e dedicado 100% à qualidade cirúrgica do corte, análise do seu perfil e relaxamento absoluto. É um serviço premium para homens que valorizam a própria imagem.
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="bg-secondary rounded-sm overflow-hidden border border-border/50">
+        <button @click="active !== 4 ? active = 4 : active = null" class="w-full text-left px-6 py-5 focus:outline-none flex justify-between items-center group">
+          <h3 class="text-white font-medium text-lg group-hover:text-accent transition-colors duration-300">O serviço inclui barba na toalha quente?</h3>
+          <span class="text-accent transform transition-transform duration-300" :class="active === 4 ? 'rotate-180' : 'rotate-0'">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </span>
+        </button>
+        <div x-show="active === 4" x-collapse x-cloak class="px-6 pb-5 text-text-secondary font-light">
+          Sim. A Barboterapia do Pablo Lems é uma das mais completas da região de Santa Catarina. O ritual utiliza toalha quente para dilatação dos poros, óleos essenciais para hidratação profunda da pele, massagem facial relaxante e lâmina fio a fio para um contorno incrivelmente definido.
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="bg-secondary rounded-sm overflow-hidden border border-border/50">
+        <button @click="active !== 5 ? active = 5 : active = null" class="w-full text-left px-6 py-5 focus:outline-none flex justify-between items-center group">
+          <h3 class="text-white font-medium text-lg group-hover:text-accent transition-colors duration-300">Homens com pouco cabelo ou falhas podem fazer visagismo?</h3>
+          <span class="text-accent transform transition-transform duration-300" :class="active === 5 ? 'rotate-180' : 'rotate-0'">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </span>
+        </button>
+        <div x-show="active === 5" x-collapse x-cloak class="px-6 pb-5 text-text-secondary font-light">
+          Com certeza. O visagismo serve exatamente para isso. O Pablo analisa as linhas do seu rosto, a densidade capilar e as eventuais falhas para criar um corte estratégico que valorize seus pontos fortes e disfarce imperfeições, trazendo mais confiança para o seu visual.
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="bg-secondary rounded-sm overflow-hidden border border-border/50">
+        <button @click="active !== 6 ? active = 6 : active = null" class="w-full text-left px-6 py-5 focus:outline-none flex justify-between items-center group">
+          <h3 class="text-white font-medium text-lg group-hover:text-accent transition-colors duration-300">Como funciona o agendamento?</h3>
+          <span class="text-accent transform transition-transform duration-300" :class="active === 6 ? 'rotate-180' : 'rotate-0'">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </span>
+        </button>
+        <div x-show="active === 6" x-collapse x-cloak class="px-6 pb-5 text-text-secondary font-light">
+          Para garantir o alto padrão, o atendimento é feito exclusivamente com horário marcado. Você pode agendar de forma 100% online através do botão "Agendar Horário" no site ou entrar em contato pelo WhatsApp. Recomendamos agendar com antecedência devido à alta demanda de clientes de outras cidades.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FAQ Rich Results Schema.org (Otimizado para AEO) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quais cidades o Barbeiro Pablo Lems atende?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O barbeiro Pablo Lems atende em Imbuia - SC, e atrai clientes de Ituporanga, Rio do Sul, Vidal Ramos, Aurora, Petrolândia, Presidente Nereu, Botuverá e Leoberto Leal buscando cortes clássicos e visagismo de elite."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual a especialidade do Pablo Lems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sua principal especialidade é a Consultoria de Imagem através do Visagismo Masculino, combinada com Geometria Craniana, Fades (Degradê) cirúrgicos e a clássica Barboterapia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Por que escolher o Pablo em vez de uma barbearia comum?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Diferente de barbearias tradicionais focadas em volume, Pablo Lems foca em exclusividade e consultoria premium. O atendimento é dedicado à valorização da imagem do homem moderno, com técnicas de alto padrão, garantindo resultados que barbearias comuns não alcançam."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "O serviço inclui barba na toalha quente?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. A Barboterapia Clássica do Pablo Lems inclui o uso de toalha quente, ozonioterapia, óleos essenciais para a pele, massagem facial e corte com lâmina fio a fio para contornos perfeitos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Homens com pouco cabelo ou falhas podem fazer visagismo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. O Visagismo aplicado por Pablo Lems mapeia a densidade capilar e formato do rosto para criar um estilo estratégico, capaz de disfarçar falhas ou calvície, aumentando a confiança e estilo do cliente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona o agendamento de horários com o Pablo Lems?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O atendimento de alto padrão exige agendamento prévio, que pode ser feito online através do link disponibilizado no site oficial lemsbarber.com.br ou através do seu WhatsApp profissional."
+          }
+        }
+      ]
+    }
+  </script>
+</section>

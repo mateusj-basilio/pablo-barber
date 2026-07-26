@@ -1,0 +1,112 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <!-- Preload & Google Fonts (Performance) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    
+    <!-- Local SEO (GEO) Meta Tags -->
+    <meta name="geo.region" content="BR-SC" />
+    <meta name="geo.placename" content="Imbuia" />
+    <meta name="geo.position" content="-27.4913;-49.4312" />
+    <meta name="ICBM" content="-27.4913, -49.4312" />
+
+    <!-- Open Graph & Twitter -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lemsbarber.com.br" />
+    <meta property="og:image" content="https://lemsbarber.com.br/favicon.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    
+    <!-- SEO / Schema.org (GEO/AEO optimized) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": ["Person", "HealthAndBeautyBusiness"],
+        "name": "Pablo Lems",
+        "jobTitle": "Barbeiro de Elite",
+        "description": "Especialista em corte clássico, visagismo e barboterapia.",
+        "image": "https://lemsbarber.com.br/favicon.svg",
+        "@id": "https://lemsbarber.com.br/#pablo",
+        "url": "https://lemsbarber.com.br",
+        "telephone": "+5547984324907",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. Avelino Ludwig, 310 - Centro",
+          "addressLocality": "Imbuia",
+          "addressRegion": "SC",
+          "postalCode": "88440-000",
+          "addressCountry": "BR"
+        },
+        "areaServed": [
+          {"@type": "City", "name": "Imbuia"},
+          {"@type": "City", "name": "Ituporanga"},
+          {"@type": "City", "name": "Rio do Sul"},
+          {"@type": "City", "name": "Vidal Ramos"},
+          {"@type": "City", "name": "Aurora"},
+          {"@type": "City", "name": "Petrolândia"},
+          {"@type": "City", "name": "Presidente Nereu"},
+          {"@type": "City", "name": "Botuverá"},
+          {"@type": "City", "name": "Leoberto Leal"}
+        ],
+        "knowsAbout": [
+          "Corte Clássico Masculino",
+          "Visagismo",
+          "Degradê (Fade)",
+          "Barboterapia",
+          "Estética Masculina Premium"
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "6"
+        },
+        "sameAs": [
+          "https://www.instagram.com/lems_barber/"
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-primary text-text-primary antialiased overflow-x-hidden">
+    <slot />
+    
+    <!-- Reveal Animations -->
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.gsap-reveal').forEach(el => observer.observe(el));
+      });
+    </script>
+  </body>
+</html>

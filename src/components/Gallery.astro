@@ -1,0 +1,132 @@
+---
+import { Image } from 'astro:assets';
+import imgAmericano from '../assets/images/galeria/americano.jpg';
+import imgDegrade from '../assets/images/galeria/degrade.jpg';
+import imgBuzCut from '../assets/images/galeria/galeria-buz-cut.jpg';
+import imgMoicano from '../assets/images/galeria/galeria-moicano.jpg';
+import imgPlatinado from '../assets/images/galeria/galeria-platinado.jpg';
+import imgMidFade from '../assets/images/galeria/mid-fade-v-barba-italiana.jpg';
+import imgLowFade from '../assets/images/galeria/low-fade-desenho.jpg';
+import imgTaperDesenho from '../assets/images/galeria/taper-fade-desenho.jpg';
+import imgTaperOldMoney from '../assets/images/galeria/taper-fade-old-money.jpg';
+import p1 from '../assets/images/galeria/personalidade-1.jpg';
+import p2 from '../assets/images/galeria/personalidade-2.jpg';
+import p3 from '../assets/images/galeria/personalidade-3.jpg';
+import p4 from '../assets/images/galeria/personalidade-4.jpg';
+import p5 from '../assets/images/galeria/personalidade-5.jpg';
+
+const visibleImages = [
+  { img: imgAmericano, title: 'Americano' },
+  { img: imgDegrade, title: 'Degradê' },
+  { img: imgBuzCut, title: 'Buz Cut' },
+  { img: imgMoicano, title: 'Moicano' },
+  { img: imgPlatinado, title: 'Platinado' },
+  { img: p1, title: 'Corte Personalidade (Série)' }
+];
+
+const allImages = [
+  imgAmericano, imgDegrade, imgBuzCut, imgMoicano, imgPlatinado, imgMidFade,
+  imgLowFade, imgTaperDesenho, imgTaperOldMoney,
+  p1, p2, p3, p4, p5
+];
+
+const modalImagesUrls = allImages.map(img => img.src);
+---
+
+<section id="galeria" class="py-24 bg-primary border-t border-border/30" x-data={`{ 
+  lightboxOpen: false, 
+  currentIndex: 0, 
+  images: ${JSON.stringify(modalImagesUrls)},
+  openModal(index) {
+    this.currentIndex = index;
+    this.lightboxOpen = true;
+  },
+  next() {
+    this.currentIndex = (this.currentIndex + 1) % this.images.length;
+  },
+  prev() {
+    this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
+  }
+}`}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16 gsap-reveal">
+      <p class="text-accent uppercase tracking-widest font-semibold text-sm mb-2">Portfolio</p>
+      <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mb-6">
+        Minha <span class="text-accent italic">Galeria</span>
+      </h2>
+      <p class="text-text-secondary text-lg max-w-2xl mx-auto font-light">
+        A precisão e o detalhe que definem minha assinatura.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12">
+      {visibleImages.map((item, index) => (
+        <div 
+          class="aspect-[4/5] overflow-hidden rounded-sm cursor-pointer relative group gsap-reveal"
+          style={`transition-delay: ${index * 100}ms`}
+          @click={`openModal(${index})`}
+        >
+          <div class="absolute inset-0 bg-primary/60 group-hover:bg-primary/20 transition-colors duration-500 z-10"></div>
+          <Image 
+            src={item.img} 
+            alt={item.title} 
+            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 grayscale group-hover:grayscale-0"
+            loading="lazy"
+          />
+          <div class="absolute bottom-6 left-6 z-20">
+            <p class="text-white font-heading text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform translate-y-4 group-hover:translate-y-0">{item.title}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 gsap-reveal">
+      <button @click="openModal(0)" class="btn-primary w-full sm:w-auto">
+        Abrir Galeria Completa
+      </button>
+      <a href="https://instagram.com/lems_barber" target="_blank" rel="noopener noreferrer" 
+         class="btn-outline w-full sm:w-auto">
+        Ver mais no Instagram
+      </a>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <template x-teleport="body">
+    <div 
+      x-show="lightboxOpen" 
+      style="display: none;"
+      class="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm p-4"
+      x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0"
+      x-transition:enter-end="opacity-100"
+      x-transition:leave="transition ease-in duration-200"
+      x-transition:leave-start="opacity-100"
+      x-transition:leave-end="opacity-0"
+      @keydown.escape.window="lightboxOpen = false"
+      @keydown.arrow-right.window="next()"
+      @keydown.arrow-left.window="prev()"
+    >
+      <button @click="lightboxOpen = false" class="absolute top-6 right-6 text-white/70 hover:text-white transition-colors p-2 z-50">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      </button>
+      
+      <!-- Prev Button -->
+      <button @click.stop="prev()" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/50 hover:text-white hover:bg-white/10 p-4 rounded-full transition-all z-50">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+      </button>
+
+      <!-- Next Button -->
+      <button @click.stop="next()" class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/50 hover:text-white hover:bg-white/10 p-4 rounded-full transition-all z-50">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+      </button>
+
+      <!-- Counter -->
+      <div class="absolute top-6 left-6 text-text-secondary font-sans tracking-widest z-50">
+        <span x-text="currentIndex + 1"></span> / <span x-text="images.length"></span>
+      </div>
+
+      <img :src="images[currentIndex]" alt="Imagem em destaque" class="max-w-full max-h-[85vh] object-contain rounded-sm shadow-2xl" @click.stop="next()" />
+    </div>
+  </template>
+</section>
