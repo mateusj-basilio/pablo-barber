@@ -7,7 +7,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://lemsbarber.com.br',
+  site: 'https://mateusj-basilio.github.io',
+  base: '/pablo-barber',
   vite: {
     plugins: [tailwindcss()]
   },
