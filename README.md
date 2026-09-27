@@ -1,43 +1,41 @@
-# Astro Starter Kit: Minimal
+# Pablo Lems - Barbearia
 
-```sh
-npm create astro@latest -- --template minimal
+Site do barbeiro Pablo Lems, especialista em corte clássico e visagismo, com atendimento em Imbuia (SC) e região. Landing page de página única, otimizada para SEO local, com agendamento via WhatsApp.
+
+**Site no ar:** https://mateusj-basilio.github.io/pablo-barber/
+
+## Seções
+
+Hero, Sobre, Filosofia, Serviços, Qualificações, Formação, Galeria, Depoimentos, Instagram, FAQ, Contato e botão flutuante de WhatsApp (componentes em `src/components/`).
+
+## Stack
+
+- [Astro](https://astro.build) (site estático)
+- Tailwind CSS 4 (via `@tailwindcss/vite`)
+- Alpine.js (interatividade leve)
+- `@astrojs/sitemap` (sitemap automático)
+
+## Como rodar localmente
+
+Pré-requisito: Node.js 22.12 ou superior.
+
+```bash
+npm install
+npm run dev        # http://localhost:4321/pablo-barber
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+| Comando | Ação |
+|---|---|
+| `npm run build` | Gera o site estático em `dist/` |
+| `npm run preview` | Pré-visualiza o build localmente |
 
-## 🚀 Project Structure
+O `astro.config.mjs` define `site` e `base: '/pablo-barber'` para funcionar no GitHub Pages.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Deploy
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Cada push na branch `main` dispara o workflow `.github/workflows/deploy.yml`, que faz o build com `withastro/action` e publica no GitHub Pages.
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Documentação interna
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- `SYSTEM_DESIGN.md` e `design-system/` - decisões de design
+- `AGENTS.md` / `CLAUDE.md` - instruções para agentes de IA
